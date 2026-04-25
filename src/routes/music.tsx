@@ -1,18 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { VideoClip } from "@/components/VideoClip";
+import { MediaTile } from "@/components/MediaTile";
 
 import dholPlayer from "@/assets/music-dhol-player.jpg";
 import qawwali from "@/assets/music-qawwali.jpg";
 import algoza from "@/assets/music-algoza.jpg";
 
-import bhangraVid from "@/assets/video-bhangra.mp4.asset.json";
-import luddiVid from "@/assets/video-luddi.mp4.asset.json";
-import deraVid from "@/assets/video-dera.mp4.asset.json";
-import sarsonVid from "@/assets/video-sarson.mp4.asset.json";
 import bhangraImg from "@/assets/dance-bhangra.jpg";
 import luddiImg from "@/assets/dance-luddi.jpg";
-import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
 import sarsonImg from "@/assets/lifestyle-children-sarson.jpg";
 
 export const Route = createFileRoute("/music")({
@@ -42,32 +37,21 @@ const performances = [
     title: "Bhangra in the Mustard Fields",
     artist: "Folk dhol drummers · Pakistani Punjab",
     desc: "The harvest dance. Energetic kicks, fan-shaped turlas, and the ground-shaking double beat of the dhol echoing across the sarson fields.",
-    src: bhangraVid.url,
-    poster: bhangraImg,
+    image: bhangraImg,
     accent: "deep-red",
   },
   {
     title: "Luddi — Women's Circle Dance",
     artist: "Village courtyard · Bahawalpur",
     desc: "Slower, circular, performed in groups with raised dupattas catching the evening air.",
-    src: luddiVid.url,
-    poster: luddiImg,
+    image: luddiImg,
     accent: "royal-green",
-  },
-  {
-    title: "Dera — The Village Gathering",
-    artist: "Elders of rural Punjab",
-    desc: "Brass hukka passing between elders, white pagris, charpais on the edge of golden fields. The slow music of conversation and wind.",
-    src: deraVid.url,
-    poster: deraHukka,
-    accent: "mustard",
   },
   {
     title: "Sarson Ke Khet — Ambient Punjab",
     artist: "The land itself",
     desc: "Endless mustard fields at sunrise. The wind moves the yellow flowers like a slow algoza note across the heartland.",
-    src: sarsonVid.url,
-    poster: sarsonImg,
+    image: sarsonImg,
     accent: "indigo-blue",
   },
 ];
@@ -107,7 +91,7 @@ function MusicPage() {
           <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-10">
             {performances.map((p) => (
               <article key={p.title} className="group">
-                <VideoClip src={p.src} poster={p.poster} className="border border-mustard/20 shadow-elegant" ariaLabel={p.title} />
+                <MediaTile image={p.image} alt={p.title} className="border border-mustard/20 shadow-elegant" />
                 <div className="mt-5 flex items-start gap-4">
                   <div
                     className="h-1 w-12 mt-3 shrink-0 rounded-full"

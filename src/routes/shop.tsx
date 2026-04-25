@@ -61,7 +61,7 @@ type Category = (typeof categories)[number];
 const products: Product[] = [
   { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Bridal Couture", img: lehenga, imgAlt: lehenga2 },
   { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry },
-  { id: 3, name: "Mustard Tilla Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa },
+  { id: 3, name: "Embellished Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa },
   { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Footwear", img: kohlapuri },
   { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Apparel", img: shalwarKameez },
   { id: 6, name: "Cream Dhoti Kurta & Waistcoat", artisan: "Lahore Tailor House", price: 140, tag: "Apparel", img: dhotiKurta, imgAlt: dhotiKurta2 },
