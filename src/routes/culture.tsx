@@ -1,15 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { VideoClip } from "@/components/VideoClip";
 
 import mehndi from "@/assets/culture-mehndi.jpg";
+import mehndiNight from "@/assets/wedding-mehndi-night.jpg";
 import chooriyan from "@/assets/wedding-chooriyan.jpg";
 import doli from "@/assets/wedding-doli.jpg";
 import baratGroom from "@/assets/wedding-barat-groom.jpg";
 import walima from "@/assets/wedding-walima.jpg";
-import kikli from "@/assets/culture-kikli.jpg";
-import bhangra from "@/assets/dance-bhangra.jpg";
-import luddi from "@/assets/dance-luddi.jpg";
+import mayun from "@/assets/wedding-mayun.jpg";
+import nikah from "@/assets/wedding-nikah.jpg";
+import rukhsati from "@/assets/wedding-rukhsati.jpg";
+import bhangraImg from "@/assets/dance-bhangra.jpg";
+import luddiImg from "@/assets/dance-luddi.jpg";
+import kikliImg from "@/assets/culture-kikli.jpg";
 import truck from "@/assets/culture-truck-art.jpg";
 import family from "@/assets/lifestyle-family.jpg";
 import womenCasual from "@/assets/lifestyle-women-casual.jpg";
@@ -18,6 +22,11 @@ import elderPagri from "@/assets/portrait-elder-pagri.jpg";
 import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
 import tanga from "@/assets/lifestyle-tanga.jpg";
 
+import bhangraVid from "@/assets/video-bhangra.mp4.asset.json";
+import luddiVid from "@/assets/video-luddi.mp4.asset.json";
+import kikliVid from "@/assets/video-kikli.mp4.asset.json";
+import deraVid from "@/assets/video-dera.mp4.asset.json";
+
 export const Route = createFileRoute("/culture")({
   head: () => ({
     meta: [
@@ -25,7 +34,7 @@ export const Route = createFileRoute("/culture")({
       {
         name: "description",
         content:
-          "Mehndi nights, doli & barat, walima, bhangra, luddi, kikli, the village dera and tanga — the daily living traditions of Pakistani Punjab.",
+          "Mayun, mehndi, nikah, doli, barat, walima, rukhsati, bhangra, luddi, kikli — the rituals and daily living traditions of Pakistani Punjab.",
       },
       { property: "og:title", content: "Living Culture of Punjab" },
       {
@@ -42,34 +51,58 @@ export const Route = createFileRoute("/culture")({
 
 const wedding = [
   {
-    title: "Mayun & Mehndi",
-    body: "The bride wears yellow. Marigolds rain from the ceiling. The dholki begins, and the women's tappay verses turn into the night's soundtrack. Henna stains her hands the colour of a winter sunset.",
-    img: mehndi,
+    title: "Mayun",
+    body: "The bride wears yellow. Female relatives apply ubtan paste to her arms. Marigolds rain from the ceiling. The journey begins in turmeric and laughter.",
+    img: mayun,
     day: "Day 1",
   },
   {
+    title: "Mehndi Night",
+    body: "Henna is applied in paisleys and peacocks. The dholki begins, women's tappay verses fill the courtyard. Yellow and orange everywhere.",
+    img: mehndiNight,
+    day: "Day 2",
+  },
+  {
     title: "Chooriyan & Hath Bharai",
-    body: "Glass bangles in red, green and gold are slipped onto the bride's wrists by her mother and aunts — each colour a quiet wish for a long, joyful life. Mehndi swirls into paisleys and peacocks.",
+    body: "Glass bangles in red, green and gold are slipped onto the bride's wrists by her mother and aunts — each colour a quiet wish.",
     img: chooriyan,
     day: "Ritual",
   },
   {
-    title: "Doli — The Bride's Departure",
-    body: "An ornate red and gold velvet doli, carried on the shoulders of four men. A single moment that has marked the end of one home and the beginning of another for centuries.",
+    title: "Nikah",
+    body: "The maulvi reads the marriage contract. The groom in cream sherwani and sehra of fresh jasmine. Three times: qubool hai. The covenant is sealed.",
+    img: nikah,
+    day: "Day 3",
+  },
+  {
+    title: "Barat",
+    body: "The groom rides in on a white horse, sehra trembling, fireworks splitting the sky. Two families meet on the road — milni — and the celebration becomes one.",
+    img: baratGroom,
+    day: "Day 3",
+  },
+  {
+    title: "Doli",
+    body: "A modern doli draped in fresh white jasmine, red roses and orange marigolds — carried on the shoulders of four men. The bride leaves her father's home.",
     img: doli,
     day: "Vidaai",
   },
   {
-    title: "Barat",
-    body: "The groom rides in on a white horse, sehra of fresh jasmine trembling, fireworks splitting the sky. Two families meet on the road — milni — and the celebration becomes one.",
-    img: baratGroom,
-    day: "Day 2",
+    title: "Rukhsati",
+    body: "The Quran held over her head, brothers and father escorting her, marigold petals in the air. The most emotional moment of the entire week.",
+    img: rukhsati,
+    day: "Vidaai",
   },
   {
     title: "Walima",
-    body: "The morning after. Family. Pulao, korma, kebabs. The bride in pastel and silver. Quiet conversation. The wedding ends not with noise but with belonging.",
+    body: "The morning after. Family. Pulao, korma, kebabs. The bride in pastel and silver. The wedding ends not with noise but with belonging.",
     img: walima,
-    day: "Day 3",
+    day: "Day 4",
+  },
+  {
+    title: "Mehndi Patterns",
+    body: "Deep maroon stains spreading from fingertip to elbow. Paisleys, peacocks, the groom's name hidden somewhere only he will find.",
+    img: mehndi,
+    day: "Tradition",
   },
 ];
 
@@ -77,20 +110,26 @@ const danceVideos = [
   {
     title: "Bhangra — Pakistani Folk",
     desc: "The harvest dance. Energetic kicks, fan-shaped turlas, and the ground-shaking double beat of the dhol.",
-    videoId: "uMOsJrWj-1U",
-    img: bhangra,
+    src: bhangraVid.url,
+    poster: bhangraImg,
   },
   {
     title: "Luddi — The Circle Dance",
     desc: "Slower, circular, performed in groups with raised dupattas catching the evening air.",
-    videoId: "CGyEd0aKWZE",
-    img: luddi,
+    src: luddiVid.url,
+    poster: luddiImg,
   },
   {
     title: "Kikli — Girls' Spinning Game",
     desc: "Two girls cross hands and spin until the world blurs. A childhood memory carried by every Punjabi household.",
-    videoId: "WpYeI1Lkc7g",
-    img: kikli,
+    src: kikliVid.url,
+    poster: kikliImg,
+  },
+  {
+    title: "Dera — Elders & Hukka",
+    desc: "White pagris, brass hukka, charpais on the edge of golden mustard fields. The original gathering spot.",
+    src: deraVid.url,
+    poster: deraHukka,
   },
 ];
 
@@ -101,14 +140,13 @@ const dailyLife = [
   { title: "Three Generations", desc: "Joint families under one roof — grandfather in white, mother in florals, son in beige, daughter in red.", img: family },
   { title: "Roadside Conversations", desc: "Three men, three ages, one cup of doodh patti chai. Mornings begin at the dhaba, never at home.", img: menCasual },
   { title: "The White Pagri", desc: "A simple white turban, deeply tanned skin, a wooden hukka. The face of the Punjabi elder, unchanged across centuries.", img: elderPagri },
-  { title: "Truck Art", desc: "Lahore's roads are moving murals — peacocks, calligraphy, mirrors painted by hand on every Bedford and Hino.", img: truck },
 ];
 
 function CulturePage() {
   return (
     <>
       <section className="relative h-[70vh] flex items-end overflow-hidden">
-        <img src={doli} alt="Pakistani Punjabi bride doli being carried at golden hour" className="absolute inset-0 w-full h-full object-cover ken-burns" width={1920} height={1080} />
+        <img src={doli} alt="Modern floral Pakistani Punjabi bride doli at golden hour" className="absolute inset-0 w-full h-full object-cover ken-burns" width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
         <div className="relative container mx-auto px-6 pb-20 pt-40 text-beige">
           <div className="text-xs tracking-[0.3em] uppercase text-mustard mb-4">Living Traditions</div>
@@ -118,12 +156,12 @@ function CulturePage() {
         </div>
       </section>
 
-      {/* Weddings */}
+      {/* Wedding Ritual Gallery */}
       <section className="phulkari-bg py-24 md:py-32">
         <div className="container mx-auto px-6">
           <SectionHeading
-            eyebrow="Punjabi Weddings"
-            title="Three nights. One lifetime."
+            eyebrow="Punjabi Wedding Ritual Gallery"
+            title="Four nights. One lifetime."
             description="A Pakistani Punjabi wedding is not an event — it's a season. From mayun to walima, every ritual carries five centuries of meaning."
           />
           <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -143,19 +181,19 @@ function CulturePage() {
         </div>
       </section>
 
-      {/* Dance & Folk Videos */}
+      {/* Dance & Folk Videos — AI generated motion clips */}
       <section className="bg-ink text-beige py-24 md:py-32">
         <div className="container mx-auto px-6">
           <SectionHeading
             variant="light"
             eyebrow="Dance & Joy"
             title="When the dhol drops, Punjab dances."
-            description="Bhangra in the fields, luddi in the courtyard, kikli in the dust of a village afternoon. Below: real footage of Pakistani folk performance."
+            description="Bhangra in the fields, luddi in the courtyard, kikli in the dust of a village afternoon — and elders smoking hukka on the dera. Press play."
           />
-          <div className="mt-16 grid lg:grid-cols-3 gap-8">
+          <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-10">
             {danceVideos.map((v) => (
               <article key={v.title} className="group">
-                <YouTubeEmbed videoId={v.videoId} title={v.title} className="border border-mustard/20 shadow-elegant" />
+                <VideoClip src={v.src} poster={v.poster} className="border border-mustard/20 shadow-elegant" ariaLabel={v.title} />
                 <h3 className="font-display text-2xl md:text-3xl mt-5 text-beige">{v.title}</h3>
                 <p className="text-beige/70 leading-relaxed mt-2">{v.desc}</p>
               </article>
@@ -186,6 +224,13 @@ function CulturePage() {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="mt-12 flex items-center gap-3 text-xs text-foreground/60">
+            <span className="inline-block h-px w-8 bg-foreground/30" />
+            Truck Art is a moving canvas — peacocks, calligraphy, mirrors painted by hand on every Bedford & Hino.
+          </div>
+          <div className="mt-6 rounded-md overflow-hidden shadow-soft">
+            <img src={truck} alt="Pakistani truck art with peacocks and calligraphy" loading="lazy" width={1920} height={900} className="w-full h-auto object-cover" />
           </div>
         </div>
       </section>
