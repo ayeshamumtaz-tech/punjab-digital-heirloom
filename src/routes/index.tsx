@@ -2,19 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, MapPin } from "lucide-react";
 
 import heroBride from "@/assets/hero-bride.jpg";
-import cultureFields from "@/assets/culture-fields.jpg";
-import cultureMehndi from "@/assets/culture-mehndi.jpg";
-import cultureTruck from "@/assets/culture-truck-art.jpg";
+import childrenSarson from "@/assets/lifestyle-children-sarson.jpg";
+import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
+import mittiGhar from "@/assets/lifestyle-mitti-ghar.jpg";
 import heritageBadshahi from "@/assets/heritage-badshahi.jpg";
-import heritageShalimar from "@/assets/heritage-shalimar.jpg";
-import foodLassi from "@/assets/food-lassi.jpg";
-import foodSaag from "@/assets/food-saag.jpg";
-import musicDhol from "@/assets/music-dhol.jpg";
-import musicAlgoza from "@/assets/music-algoza.jpg";
+import heritageHarappaBw from "@/assets/heritage-harappa-bw.jpg";
+import foodNihari from "@/assets/food-nihari.jpg";
+import foodStreetfood from "@/assets/food-streetfood.jpg";
+import dholPlayer from "@/assets/music-dhol-player.jpg";
+import qawwali from "@/assets/music-qawwali.jpg";
 import shopJewelry from "@/assets/shop-jewelry.jpg";
 import shopKhussa from "@/assets/shop-khussa.jpg";
 import shopLehenga from "@/assets/shop-lehenga.jpg";
-import shopPottery from "@/assets/shop-pottery.jpg";
+import craftGharay from "@/assets/craft-gharay.jpg";
 import textilePhulkari from "@/assets/textile-phulkari.jpg";
 
 import { SectionHeading } from "@/components/SectionHeading";
@@ -45,24 +45,24 @@ const shopPreview = [
   { img: shopLehenga, name: "Bridal Couture", price: "from $480", tag: "Phulkari · Zardozi" },
   { img: shopJewelry, name: "Heirloom Jewelry", price: "from $260", tag: "Kundan · Pearls" },
   { img: shopKhussa, name: "Handmade Khussa", price: "from $95", tag: "Multani Leather" },
-  { img: shopPottery, name: "Multani Pottery", price: "from $58", tag: "Blue Glaze" },
+  { img: craftGharay, name: "Multani Pottery", price: "from $58", tag: "Blue Glaze · Matti" },
 ];
 
 const cultureCards = [
   {
-    img: cultureMehndi,
-    title: "Mehndi Nights",
-    body: "Marigold canopies, dholki rhythms, and the bride's hands turning crimson with henna — the prelude to every Punjabi wedding.",
-  },
-  {
-    img: cultureFields,
+    img: childrenSarson,
     title: "Sarson Ke Khet",
-    body: "When the mustard fields bloom across the heartland, the entire province turns to gold — a sight that has shaped poetry for centuries.",
+    body: "When the mustard fields bloom across the heartland, children run barefoot through gold and the entire province turns to a single colour.",
   },
   {
-    img: cultureTruck,
-    title: "Truck Art Soul",
-    body: "Lahore's roads are moving murals — peacocks, calligraphy, and rose vines painted by hand on every Bedford & Hino.",
+    img: deraHukka,
+    title: "The Village Dera",
+    body: "Charpais, white pagris, and a brass hukka passing between elders. The dera is where stories, politics, and silence have always lived together.",
+  },
+  {
+    img: mittiGhar,
+    title: "Mitti Ke Ghar",
+    body: "Hand-built mud houses with thatched roofs, painted with white folk geometries. Cool in summer, warm in winter — the original sustainable home.",
   },
 ];
 
@@ -85,7 +85,10 @@ function HomePage() {
           <div className="max-w-3xl reveal" style={{ ["--delay" as string]: "200ms" }}>
             <div className="inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-mustard mb-6">
               <Sparkles className="h-3.5 w-3.5" />
-              ਪੰਜਾਬ · A Living Heritage
+              <span dir="rtl" lang="ur" className="font-display text-base tracking-normal">
+                پنجاب
+              </span>
+              · A Living Heritage
             </div>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-balance">
               Experience the
@@ -126,7 +129,9 @@ function HomePage() {
           {Array.from({ length: 2 }).map((_, idx) => (
             <div key={idx} className="flex shrink-0 items-center gap-12 pr-12 font-display text-2xl italic">
               {[
-                "ਜਿਊਂਦੇ ਰਹੋ ਪੰਜਾਬ",
+                <span key="ur" dir="rtl" lang="ur">
+                  جیتا رہے پنجاب
+                </span>,
                 "✦",
                 "Phulkari",
                 "✦",
@@ -141,6 +146,10 @@ function HomePage() {
                 "Mehndi",
                 "✦",
                 "Truck Art",
+                "✦",
+                "Dera",
+                "✦",
+                "Tanga",
                 "✦",
               ].map((w, i) => (
                 <span key={i}>{w}</span>
@@ -198,7 +207,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* HERITAGE EDITORIAL */}
+      {/* HERITAGE EDITORIAL — vintage B&W + colour mix */}
       <section className="bg-ink text-beige py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -218,25 +227,26 @@ function HomePage() {
               </Link>
             </div>
             <div className="lg:col-span-7 grid grid-cols-2 gap-4 md:gap-6">
-              <div className="image-zoom rounded-md aspect-[3/4] mt-12">
-                <img src={heritageBadshahi} alt="Badshahi Mosque Lahore" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" />
+              <div className="image-zoom rounded-md aspect-[3/4] mt-12 relative">
+                <img src={heritageHarappaBw} alt="Harappa archaeological site, Indus Valley civilization, archival sepia" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" />
+                <div className="absolute bottom-3 left-3 text-[10px] tracking-[0.25em] uppercase text-beige/90 bg-ink/60 px-2 py-1 rounded-sm">c. 2500 BCE</div>
               </div>
               <div className="image-zoom rounded-md aspect-[3/4]">
-                <img src={heritageShalimar} alt="Shalimar Gardens Lahore" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" />
+                <img src={heritageBadshahi} alt="Badshahi Mosque Lahore" loading="lazy" width={1600} height={1200} className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CULTURE TILES */}
+      {/* CULTURE TILES — village life */}
       <section className="py-24 md:py-32 phulkari-bg">
         <div className="container mx-auto px-6">
           <SectionHeading
             align="center"
             eyebrow="Living Traditions"
             title="The colors that won't fade."
-            description="Mehndi nights, mustard fields, painted trucks. Punjab is not preserved in glass — it is danced, eaten, sung every single day."
+            description="Mustard fields, mud houses, and elders on the dera. Punjab is not preserved in glass — it is danced, eaten, and breathed every single day."
           />
           <div className="mt-16 grid md:grid-cols-3 gap-8">
             {cultureCards.map((card, i) => (
@@ -280,17 +290,17 @@ function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="grid grid-cols-2 gap-4 md:gap-6">
               <div className="image-zoom rounded-md aspect-square shadow-elegant">
-                <img src={foodLassi} alt="Traditional Pakistani lassi in clay kulhar" loading="lazy" width={1024} height={1024} className="h-full w-full object-cover" />
+                <img src={foodNihari} alt="Pakistani nihari in brass karahi" loading="lazy" width={1600} height={1080} className="h-full w-full object-cover" />
               </div>
               <div className="image-zoom rounded-md aspect-square mt-12 shadow-elegant">
-                <img src={foodSaag} alt="Sarson da saag and makki di roti" loading="lazy" width={1024} height={1024} className="h-full w-full object-cover" />
+                <img src={foodStreetfood} alt="Pakistani street food thali — gol gappay, dahi bhallay, samosa, chana chaat" loading="lazy" width={1600} height={1080} className="h-full w-full object-cover" />
               </div>
             </div>
             <div>
               <SectionHeading
                 eyebrow="Punjab Da Khana"
                 title="Where butter is poetry and lassi is a love letter."
-                description="Sarson da saag with makki di roti, slow-fried in desi ghee. A clay kulhar of frothing lassi at dawn. Gol gappay on Lahore's Mall Road. Food here isn't a meal — it's identity."
+                description="Nihari at sunrise. Gol gappay at dusk. Sarson da saag with desi ghee on a winter afternoon. In Lahore, food isn't a meal — it's identity, history, and hospitality on a single brass thali."
               />
               <Link
                 to="/food"
@@ -307,12 +317,12 @@ function HomePage() {
       {/* MUSIC */}
       <section className="relative py-24 md:py-32 overflow-hidden bg-ink text-beige">
         <img
-          src={musicDhol}
+          src={dholPlayer}
           alt=""
           aria-hidden
           loading="lazy"
           width={1920}
-          height={1200}
+          height={1080}
           className="absolute inset-0 w-full h-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/30" />
@@ -322,7 +332,7 @@ function HomePage() {
               variant="light"
               eyebrow="Folk & Rhythm"
               title="The dhol does not need a translator."
-              description="From the algoza of a Cholistani shepherd to the booming dhol of a barat procession — Punjab's music is the universal language of joy. Tappay, mahiya, qawwali, bhangra."
+              description="From the algoza of a Cholistani shepherd to the booming dhol of a barat procession, from qawwali at Data Darbar to tappay in a village courtyard — Punjab's music is the universal language of joy."
             />
             <Link
               to="/music"
@@ -334,7 +344,7 @@ function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-5">
             <div className="image-zoom rounded-md aspect-[3/4] shadow-elegant border border-mustard/20">
-              <img src={musicAlgoza} alt="Pakistani folk musician with algoza" loading="lazy" width={1400} height={1750} className="h-full w-full object-cover" />
+              <img src={qawwali} alt="Pakistani qawwali ensemble at a Sufi shrine" loading="lazy" width={1400} height={1750} className="h-full w-full object-cover" />
             </div>
             <div className="image-zoom rounded-md aspect-[3/4] mt-16 shadow-elegant border border-mustard/20">
               <img src={textilePhulkari} alt="Phulkari embroidery" loading="lazy" width={1400} height={1750} className="h-full w-full object-cover" />
