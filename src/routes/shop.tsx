@@ -1,13 +1,36 @@
+import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { ProductCard, type Product } from "@/components/ProductCard";
 
-import jewelry from "@/assets/shop-jewelry.jpg";
-import khussa from "@/assets/shop-khussa.jpg";
 import lehenga from "@/assets/shop-lehenga.jpg";
-import pottery from "@/assets/shop-pottery.jpg";
+import lehenga2 from "@/assets/shop-lehenga-2.jpg";
+import jewelry from "@/assets/shop-jewelry.jpg";
+import jewelry2 from "@/assets/shop-jewelry-2.jpg";
+import khussa from "@/assets/shop-khussa.jpg";
+import khussa2 from "@/assets/shop-khussa-2.jpg";
+import kohlapuri from "@/assets/shop-kohlapuri.jpg";
+import kohlapuri2 from "@/assets/shop-kohlapuri-2.jpg";
+import shalwarKameez from "@/assets/shop-shalwar-kameez-women.jpg";
+import shalwarKameez2 from "@/assets/shop-shalwar-kameez-women-2.jpg";
+import dhotiKurta from "@/assets/shop-dhoti-kurta.jpg";
+import dhotiKurta2 from "@/assets/shop-dhoti-kurta-2.jpg";
+import chooriyan from "@/assets/shop-kanch-chooriyan.jpg";
+import chooriyan2 from "@/assets/shop-kanch-chooriyan-2.jpg";
+import paranda from "@/assets/shop-paranda.jpg";
+import paranda2 from "@/assets/shop-paranda-2.jpg";
+import charpai from "@/assets/shop-charpai.jpg";
+import charpai2 from "@/assets/shop-charpai-2.jpg";
+import sandook from "@/assets/shop-sandook.jpg";
+import sandook2 from "@/assets/shop-sandook-2.jpg";
+import karhaiChadar from "@/assets/shop-karhai-chadar.jpg";
+import karhaiChadar2 from "@/assets/shop-karhai-chadar-2.jpg";
+import wallDecor from "@/assets/shop-wall-decor.jpg";
+import wallDecor2 from "@/assets/shop-wall-decor-2.jpg";
+import mattiBartan from "@/assets/shop-matti-bartan.jpg";
+import mattiBartan2 from "@/assets/shop-matti-bartan-2.jpg";
 import phulkari from "@/assets/textile-phulkari.jpg";
-import bride from "@/assets/hero-bride.jpg";
+import karhaiChadarHero from "@/assets/shop-karhai-chadar.jpg";
 
 export const Route = createFileRoute("/shop")({
   head: () => ({
@@ -16,7 +39,7 @@ export const Route = createFileRoute("/shop")({
       {
         name: "description",
         content:
-          "Hand-crafted Phulkari, bridal couture, kundan jewelry, Multani pottery, and khussa — direct from artisans across Pakistani Punjab.",
+          "Hand-crafted shalwar kameez, dhoti kurta, kohlapuri sandals, kanch chooriyan, paranday, charpai, sandook, karhai chadarein, gharay & wall decor — direct from artisans across Pakistani Punjab.",
       },
       { property: "og:title", content: "The Bazaar — Punjabi Heritage Atelier" },
       {
@@ -31,20 +54,43 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
 });
 
-const categories = ["All", "Bridal Couture", "Jewelry", "Footwear", "Home Décor", "Textiles"];
+const categories = [
+  "All",
+  "Apparel",
+  "Bridal Couture",
+  "Jewelry",
+  "Footwear",
+  "Textiles",
+  "Home Décor",
+] as const;
 
-const products = [
-  { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Bridal Couture", img: lehenga },
-  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry },
-  { id: 3, name: "Mustard Tilla Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa },
-  { id: 4, name: "Multani Blue Floral Vase", artisan: "Multan Pottery House", price: 58, tag: "Home Décor", img: pottery },
-  { id: 5, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Embroiderer", price: 180, tag: "Textiles", img: phulkari },
-  { id: 6, name: "Bridal Sehra Crown", artisan: "Lahore Heritage Studio", price: 420, tag: "Bridal Couture", img: bride },
-  { id: 7, name: "Jhumka Earrings — Gold Plated", artisan: "Anarkali Bazaar Goldsmith", price: 145, tag: "Jewelry", img: jewelry },
-  { id: 8, name: "Hand-Painted Truck-Art Tray", artisan: "Rawalpindi Atelier", price: 75, tag: "Home Décor", img: pottery },
+type Category = (typeof categories)[number];
+
+const products: Product[] = [
+  { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Bridal Couture", img: lehenga, imgAlt: lehenga2 },
+  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry, imgAlt: jewelry2 },
+  { id: 3, name: "Mustard Tilla Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa, imgAlt: khussa2 },
+  { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Footwear", img: kohlapuri, imgAlt: kohlapuri2 },
+  { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Apparel", img: shalwarKameez, imgAlt: shalwarKameez2 },
+  { id: 6, name: "Cream Dhoti Kurta & Waistcoat", artisan: "Lahore Tailor House", price: 140, tag: "Apparel", img: dhotiKurta, imgAlt: dhotiKurta2 },
+  { id: 7, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan, imgAlt: chooriyan2 },
+  { id: 8, name: "Sheesha Paranda — Maroon", artisan: "Bahawalpur Embroiderer", price: 48, tag: "Jewelry", img: paranda, imgAlt: paranda2 },
+  { id: 9, name: "Colorful Woven Charpai", artisan: "Sargodha Weaver", price: 220, tag: "Home Décor", img: charpai, imgAlt: charpai2 },
+  { id: 10, name: "Hand-Carved Lakri Sandook", artisan: "Chiniot Wood Master", price: 540, tag: "Home Décor", img: sandook, imgAlt: sandook2 },
+  { id: 11, name: "Karhai-Wali Chadar — Maroon", artisan: "Multan Embroiderer", price: 195, tag: "Textiles", img: karhaiChadar, imgAlt: karhaiChadar2 },
+  { id: 12, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Atelier", price: 180, tag: "Textiles", img: phulkari, imgAlt: phulkari },
+  { id: 13, name: "Truck-Art Wall Decor Set", artisan: "Rawalpindi Painter", price: 110, tag: "Home Décor", img: wallDecor, imgAlt: wallDecor2 },
+  { id: 14, name: "Multani Painted Gharay (Set of 3)", artisan: "Multan Pottery House", price: 88, tag: "Home Décor", img: mattiBartan, imgAlt: mattiBartan2 },
 ];
 
 function ShopPage() {
+  const [active, setActive] = useState<Category>("All");
+
+  const filtered = useMemo(
+    () => (active === "All" ? products : products.filter((p) => p.tag === active)),
+    [active]
+  );
+
   return (
     <>
       <section className="relative pt-40 pb-20 phulkari-bg overflow-hidden">
@@ -62,50 +108,43 @@ function ShopPage() {
 
       <section className="pb-24 md:pb-32 phulkari-bg">
         <div className="container mx-auto px-6">
-          {/* Filter pills */}
+          {/* Filter pills — interactive */}
           <div className="flex items-center gap-2 overflow-x-auto pb-6 mb-10 -mx-6 px-6 scrollbar-hide">
-            {categories.map((cat, i) => (
-              <button
-                key={cat}
-                className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all border ${
-                  i === 0
-                    ? "bg-foreground text-background border-foreground"
-                    : "bg-card text-foreground border-border hover:border-primary hover:text-primary"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+            {categories.map((cat) => {
+              const isActive = cat === active;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActive(cat)}
+                  aria-pressed={isActive}
+                  className={`shrink-0 px-5 py-2.5 rounded-full text-sm font-medium transition-all border ${
+                    isActive
+                      ? "bg-foreground text-background border-foreground shadow-soft"
+                      : "bg-card text-foreground border-border hover:border-primary hover:text-primary"
+                  }`}
+                >
+                  {cat}
+                  {isActive && active !== "All" && (
+                    <span className="ml-2 opacity-70 text-xs">({filtered.length})</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
-            {products.map((p) => (
-              <article key={p.id} className="group flex flex-col">
-                <div className="relative image-zoom aspect-[3/4] rounded-md bg-muted shadow-soft mb-4 overflow-hidden">
-                  <img src={p.img} alt={p.name} loading="lazy" width={1200} height={1500} className="h-full w-full object-cover" />
-                  <button
-                    aria-label="Add to wishlist"
-                    className="absolute top-3 right-3 h-9 w-9 rounded-full bg-background/90 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <Heart className="h-4 w-4" />
-                  </button>
-                  <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-ink to-transparent">
-                    <div className="text-xs text-mustard tracking-[0.2em] uppercase">{p.artisan}</div>
-                  </div>
-                </div>
-                <div className="text-[11px] tracking-[0.2em] uppercase text-primary mb-1.5">
-                  {p.tag}
-                </div>
-                <h3 className="font-display text-xl md:text-2xl leading-tight mb-1">{p.name}</h3>
-                <div className="mt-1 flex items-baseline justify-between">
-                  <div className="font-medium">${p.price}</div>
-                  <button className="text-xs tracking-[0.2em] uppercase text-foreground/70 hover:text-primary transition-colors">
-                    + Add
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
+          {filtered.length === 0 ? (
+            <div className="text-center py-24 text-muted-foreground">
+              <div className="font-display text-2xl mb-2">No pieces in this category yet.</div>
+              <div className="text-sm">Check back next season.</div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+              {filtered.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -113,7 +152,14 @@ function ShopPage() {
       <section className="bg-ink text-beige py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="image-zoom aspect-[4/5] rounded-md shadow-elegant order-2 lg:order-1">
-            <img src={phulkari} alt="Phulkari embroidery in progress" loading="lazy" width={1400} height={1750} className="h-full w-full object-cover" />
+            <img
+              src={karhaiChadarHero}
+              alt="Hand-embroidered karhai-wali chadar in progress"
+              loading="lazy"
+              width={1400}
+              height={1750}
+              className="h-full w-full object-cover"
+            />
           </div>
           <div className="order-1 lg:order-2">
             <SectionHeading

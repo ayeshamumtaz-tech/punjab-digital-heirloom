@@ -12,9 +12,10 @@ import foodStreetfood from "@/assets/food-streetfood.jpg";
 import dholPlayer from "@/assets/music-dhol-player.jpg";
 import qawwali from "@/assets/music-qawwali.jpg";
 import shopJewelry from "@/assets/shop-jewelry.jpg";
-import shopKhussa from "@/assets/shop-khussa.jpg";
+import shopKohlapuri from "@/assets/shop-kohlapuri.jpg";
 import shopLehenga from "@/assets/shop-lehenga.jpg";
-import craftGharay from "@/assets/craft-gharay.jpg";
+import shopCharpai from "@/assets/shop-charpai.jpg";
+import shopShalwarKameez from "@/assets/shop-shalwar-kameez-women.jpg";
 import textilePhulkari from "@/assets/textile-phulkari.jpg";
 
 import { SectionHeading } from "@/components/SectionHeading";
@@ -43,9 +44,10 @@ export const Route = createFileRoute("/")({
 
 const shopPreview = [
   { img: shopLehenga, name: "Bridal Couture", price: "from $480", tag: "Phulkari · Zardozi" },
+  { img: shopShalwarKameez, name: "Shalwar Kameez", price: "from $165", tag: "Gota · Chiffon" },
   { img: shopJewelry, name: "Heirloom Jewelry", price: "from $260", tag: "Kundan · Pearls" },
-  { img: shopKhussa, name: "Handmade Khussa", price: "from $95", tag: "Multani Leather" },
-  { img: craftGharay, name: "Multani Pottery", price: "from $58", tag: "Blue Glaze · Matti" },
+  { img: shopKohlapuri, name: "Kohlapuri Sandals", price: "from $78", tag: "Sahiwal Leather" },
+  { img: shopCharpai, name: "Woven Charpai", price: "from $220", tag: "Sargodha Weaver" },
 ];
 
 const cultureCards = [
@@ -177,7 +179,7 @@ function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
             {shopPreview.map((item) => (
               <Link
                 key={item.name}

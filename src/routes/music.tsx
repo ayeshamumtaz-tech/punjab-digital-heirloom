@@ -1,11 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { YouTubeEmbed } from "@/components/YouTubeEmbed";
+import { VideoClip } from "@/components/VideoClip";
 
 import dholPlayer from "@/assets/music-dhol-player.jpg";
 import qawwali from "@/assets/music-qawwali.jpg";
 import algoza from "@/assets/music-algoza.jpg";
-import dhol from "@/assets/music-dhol.jpg";
+
+import bhangraVid from "@/assets/video-bhangra.mp4.asset.json";
+import luddiVid from "@/assets/video-luddi.mp4.asset.json";
+import deraVid from "@/assets/video-dera.mp4.asset.json";
+import sarsonVid from "@/assets/video-sarson.mp4.asset.json";
+import bhangraImg from "@/assets/dance-bhangra.jpg";
+import luddiImg from "@/assets/dance-luddi.jpg";
+import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
+import sarsonImg from "@/assets/lifestyle-children-sarson.jpg";
 
 export const Route = createFileRoute("/music")({
   head: () => ({
@@ -14,7 +22,7 @@ export const Route = createFileRoute("/music")({
       {
         name: "description",
         content:
-          "From the algoza of Cholistan to the dhol of barat processions, qawwali at Sufi shrines and tappay verses — listen to the sound of Pakistani Punjab.",
+          "From the algoza of Cholistan to the dhol of barat processions, qawwali at Sufi shrines and tappay verses — listen and watch the sound of Pakistani Punjab.",
       },
       { property: "og:title", content: "Music & Folk of Punjab" },
       {
@@ -31,31 +39,35 @@ export const Route = createFileRoute("/music")({
 
 const performances = [
   {
-    title: "Dhol — The Heartbeat of Barat",
-    artist: "Pappu Saeen — Pakistani Folk",
-    desc: "The double-headed barrel drum that has announced every Punjabi celebration for centuries.",
-    videoId: "F-XHPGzqEAA",
+    title: "Bhangra in the Mustard Fields",
+    artist: "Folk dhol drummers · Pakistani Punjab",
+    desc: "The harvest dance. Energetic kicks, fan-shaped turlas, and the ground-shaking double beat of the dhol echoing across the sarson fields.",
+    src: bhangraVid.url,
+    poster: bhangraImg,
     accent: "deep-red",
   },
   {
-    title: "Qawwali — Dam Mast Qalandar",
-    artist: "Nusrat Fateh Ali Khan",
-    desc: "The Sufi devotional that travels from Lahore to the world. Harmonium, tabla, and the rising hands of clapping.",
-    videoId: "AEUlFNGcvX8",
+    title: "Luddi — Women's Circle Dance",
+    artist: "Village courtyard · Bahawalpur",
+    desc: "Slower, circular, performed in groups with raised dupattas catching the evening air.",
+    src: luddiVid.url,
+    poster: luddiImg,
     accent: "royal-green",
   },
   {
-    title: "Algoza — Twin Flutes of Cholistan",
-    artist: "Ustad Khamiso Khan",
-    desc: "Two wooden flutes played at once. The lonely song of the desert shepherd, breathed into the air.",
-    videoId: "qjN9krWBN84",
+    title: "Dera — The Village Gathering",
+    artist: "Elders of rural Punjab",
+    desc: "Brass hukka passing between elders, white pagris, charpais on the edge of golden fields. The slow music of conversation and wind.",
+    src: deraVid.url,
+    poster: deraHukka,
     accent: "mustard",
   },
   {
-    title: "Tappay — Punjabi Folk Verses",
-    artist: "Pathanay Khan",
-    desc: "Couplets traded back and forth, the oldest form of conversational music in Punjab.",
-    videoId: "jzNEi1KMA50",
+    title: "Sarson Ke Khet — Ambient Punjab",
+    artist: "The land itself",
+    desc: "Endless mustard fields at sunrise. The wind moves the yellow flowers like a slow algoza note across the heartland.",
+    src: sarsonVid.url,
+    poster: sarsonImg,
     accent: "indigo-blue",
   },
 ];
@@ -83,19 +95,19 @@ function MusicPage() {
         </div>
       </section>
 
-      {/* Live performances — YouTube */}
+      {/* Performances — AI motion clips with native autoplay */}
       <section className="bg-ink text-beige py-24 md:py-32">
         <div className="container mx-auto px-6">
           <SectionHeading
             variant="light"
             eyebrow="Watch & Listen"
-            title="The sound archive."
-            description="Real performances by Pakistani folk masters — dhol, qawwali, algoza, and tappay. Press play."
+            title="The motion archive."
+            description="Cinematic clips of Pakistani Punjab — bhangra, luddi, the dera, and the wind across the sarson fields. Tap the speaker icon to unmute."
           />
           <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-10">
             {performances.map((p) => (
               <article key={p.title} className="group">
-                <YouTubeEmbed videoId={p.videoId} title={p.title} className="border border-mustard/20 shadow-elegant" />
+                <VideoClip src={p.src} poster={p.poster} className="border border-mustard/20 shadow-elegant" ariaLabel={p.title} />
                 <div className="mt-5 flex items-start gap-4">
                   <div
                     className="h-1 w-12 mt-3 shrink-0 rounded-full"
@@ -149,7 +161,6 @@ function MusicPage() {
           <p className="font-display italic text-3xl md:text-5xl max-w-3xl mx-auto leading-tight">
             "Music in Punjab is not performed. <span className="text-mustard">It is breathed.</span>"
           </p>
-          <img src={dhol} alt="" aria-hidden className="hidden" />
         </div>
       </section>
     </>
