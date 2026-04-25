@@ -1,18 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { VideoClip } from "@/components/VideoClip";
+import { MediaTile } from "@/components/MediaTile";
 
 import dholPlayer from "@/assets/music-dhol-player.jpg";
 import qawwali from "@/assets/music-qawwali.jpg";
 import algoza from "@/assets/music-algoza.jpg";
 
-import bhangraVid from "@/assets/video-bhangra.mp4.asset.json";
-import luddiVid from "@/assets/video-luddi.mp4.asset.json";
-import deraVid from "@/assets/video-dera.mp4.asset.json";
-import sarsonVid from "@/assets/video-sarson.mp4.asset.json";
 import bhangraImg from "@/assets/dance-bhangra.jpg";
-import luddiImg from "@/assets/dance-luddi.jpg";
-import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
 import sarsonImg from "@/assets/lifestyle-children-sarson.jpg";
 
 export const Route = createFileRoute("/music")({
