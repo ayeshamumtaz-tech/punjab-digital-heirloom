@@ -42,7 +42,7 @@ export function SiteHeader() {
             <div className="leading-none">
               <div className="font-display text-2xl tracking-wide text-foreground">VIRSA</div>
               <div className="text-[10px] tracking-[0.25em] text-muted-foreground uppercase">
-                ਵਿਰਸਾ · Heritage
+                ورثہ · Heritage
               </div>
             </div>
           </Link>

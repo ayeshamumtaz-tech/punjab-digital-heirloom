@@ -15,7 +15,7 @@ export function SiteFooter() {
               <div>
                 <div className="font-display text-3xl">VIRSA</div>
                 <div className="text-[10px] tracking-[0.3em] text-mustard uppercase">
-                  ਵਿਰਸਾ · Punjab Heritage
+                  ورثہ · Punjab Heritage
                 </div>
               </div>
             </div>
