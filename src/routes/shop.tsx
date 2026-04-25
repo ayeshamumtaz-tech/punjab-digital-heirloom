@@ -6,27 +6,19 @@ import { ProductCard, type Product } from "@/components/ProductCard";
 import lehenga from "@/assets/shop-lehenga.jpg";
 import lehenga2 from "@/assets/shop-lehenga-2.jpg";
 import jewelry from "@/assets/shop-jewelry.jpg";
-import jewelry2 from "@/assets/shop-jewelry-2.jpg";
 import khussa from "@/assets/shop-khussa.jpg";
-import khussa2 from "@/assets/shop-khussa-2.jpg";
 import kohlapuri from "@/assets/shop-kohlapuri.jpg";
-import kohlapuri2 from "@/assets/shop-kohlapuri-2.jpg";
 import shalwarKameez from "@/assets/shop-shalwar-kameez-women.jpg";
-import shalwarKameez2 from "@/assets/shop-shalwar-kameez-women-2.jpg";
 import dhotiKurta from "@/assets/shop-dhoti-kurta.jpg";
 import dhotiKurta2 from "@/assets/shop-dhoti-kurta-2.jpg";
 import chooriyan from "@/assets/shop-kanch-chooriyan.jpg";
-import chooriyan2 from "@/assets/shop-kanch-chooriyan-2.jpg";
 import paranda from "@/assets/shop-paranda.jpg";
 import paranda2 from "@/assets/shop-paranda-2.jpg";
 import charpai from "@/assets/shop-charpai.jpg";
-import charpai2 from "@/assets/shop-charpai-2.jpg";
 import sandook from "@/assets/shop-sandook.jpg";
 import sandook2 from "@/assets/shop-sandook-2.jpg";
 import karhaiChadar from "@/assets/shop-karhai-chadar.jpg";
-import karhaiChadar2 from "@/assets/shop-karhai-chadar-2.jpg";
 import wallDecor from "@/assets/shop-wall-decor.jpg";
-import wallDecor2 from "@/assets/shop-wall-decor-2.jpg";
 import mattiBartan from "@/assets/shop-matti-bartan.jpg";
 import mattiBartan2 from "@/assets/shop-matti-bartan-2.jpg";
 import phulkari from "@/assets/textile-phulkari.jpg";
@@ -68,18 +60,18 @@ type Category = (typeof categories)[number];
 
 const products: Product[] = [
   { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Bridal Couture", img: lehenga, imgAlt: lehenga2 },
-  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry, imgAlt: jewelry2 },
-  { id: 3, name: "Mustard Tilla Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa, imgAlt: khussa2 },
-  { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Footwear", img: kohlapuri, imgAlt: kohlapuri2 },
-  { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Apparel", img: shalwarKameez, imgAlt: shalwarKameez2 },
+  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry },
+  { id: 3, name: "Mustard Tilla Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa },
+  { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Footwear", img: kohlapuri },
+  { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Apparel", img: shalwarKameez },
   { id: 6, name: "Cream Dhoti Kurta & Waistcoat", artisan: "Lahore Tailor House", price: 140, tag: "Apparel", img: dhotiKurta, imgAlt: dhotiKurta2 },
-  { id: 7, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan, imgAlt: chooriyan2 },
+  { id: 7, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan },
   { id: 8, name: "Sheesha Paranda — Maroon", artisan: "Bahawalpur Embroiderer", price: 48, tag: "Jewelry", img: paranda, imgAlt: paranda2 },
-  { id: 9, name: "Colorful Woven Charpai", artisan: "Sargodha Weaver", price: 220, tag: "Home Décor", img: charpai, imgAlt: charpai2 },
+  { id: 9, name: "Colorful Woven Charpai", artisan: "Sargodha Weaver", price: 220, tag: "Home Décor", img: charpai },
   { id: 10, name: "Hand-Carved Lakri Sandook", artisan: "Chiniot Wood Master", price: 540, tag: "Home Décor", img: sandook, imgAlt: sandook2 },
-  { id: 11, name: "Karhai-Wali Chadar — Maroon", artisan: "Multan Embroiderer", price: 195, tag: "Textiles", img: karhaiChadar, imgAlt: karhaiChadar2 },
-  { id: 12, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Atelier", price: 180, tag: "Textiles", img: phulkari, imgAlt: phulkari },
-  { id: 13, name: "Truck-Art Wall Decor Set", artisan: "Rawalpindi Painter", price: 110, tag: "Home Décor", img: wallDecor, imgAlt: wallDecor2 },
+  { id: 11, name: "Karhai-Wali Chadar — Maroon", artisan: "Multan Embroiderer", price: 195, tag: "Textiles", img: karhaiChadar },
+  { id: 12, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Atelier", price: 180, tag: "Textiles", img: phulkari },
+  { id: 13, name: "Truck-Art Wall Decor Set", artisan: "Rawalpindi Painter", price: 110, tag: "Home Décor", img: wallDecor },
   { id: 14, name: "Multani Painted Gharay (Set of 3)", artisan: "Multan Pottery House", price: 88, tag: "Home Décor", img: mattiBartan, imgAlt: mattiBartan2 },
 ];
 

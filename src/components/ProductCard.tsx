@@ -7,7 +7,7 @@ type Product = {
   price: number;
   tag: string;
   img: string;
-  imgAlt: string;
+  imgAlt?: string;
 };
 
 /**
@@ -16,17 +16,23 @@ type Product = {
  * - md+: two square images side-by-side that both reveal on hover
  */
 export function ProductCard({ product }: { product: Product }) {
+  const images = product.imgAlt ? [product.img, product.imgAlt] : [product.img];
+  const isSingle = images.length === 1;
   return (
     <article className="group flex flex-col">
-      <div className="relative grid grid-cols-2 gap-1.5 mb-4">
-        {[product.img, product.imgAlt].map((src, i) => (
+      <div
+        className={`relative grid gap-1.5 mb-4 ${isSingle ? "grid-cols-1" : "grid-cols-2"}`}
+      >
+        {images.map((src, i) => (
           <div
             key={i}
-            className="relative aspect-[3/4] overflow-hidden rounded-md bg-muted shadow-soft"
+            className={`relative overflow-hidden rounded-md bg-muted shadow-soft ${
+              isSingle ? "aspect-[4/5]" : "aspect-[3/4]"
+            }`}
           >
             <img
               src={src}
-              alt={`${product.name} — view ${i + 1}`}
+              alt={`${product.name}${isSingle ? "" : ` — view ${i + 1}`}`}
               loading="lazy"
               width={960}
               height={1280}
