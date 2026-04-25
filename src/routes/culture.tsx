@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionHeading } from "@/components/SectionHeading";
-import { VideoClip } from "@/components/VideoClip";
+import { MediaTile } from "@/components/MediaTile";
 
 import mehndi from "@/assets/culture-mehndi.jpg";
 import mehndiNight from "@/assets/wedding-mehndi-night.jpg";
@@ -22,10 +22,6 @@ import elderPagri from "@/assets/portrait-elder-pagri.jpg";
 import deraHukka from "@/assets/lifestyle-dera-hukka.jpg";
 import tanga from "@/assets/lifestyle-tanga.jpg";
 
-import bhangraVid from "@/assets/video-bhangra.mp4.asset.json";
-import luddiVid from "@/assets/video-luddi.mp4.asset.json";
-import kikliVid from "@/assets/video-kikli.mp4.asset.json";
-import deraVid from "@/assets/video-dera.mp4.asset.json";
 
 export const Route = createFileRoute("/culture")({
   head: () => ({
@@ -110,26 +106,22 @@ const danceVideos = [
   {
     title: "Bhangra — Pakistani Folk",
     desc: "The harvest dance. Energetic kicks, fan-shaped turlas, and the ground-shaking double beat of the dhol.",
-    src: bhangraVid.url,
-    poster: bhangraImg,
+    image: bhangraImg,
   },
   {
     title: "Luddi — The Circle Dance",
     desc: "Slower, circular, performed in groups with raised dupattas catching the evening air.",
-    src: luddiVid.url,
-    poster: luddiImg,
+    image: luddiImg,
   },
   {
     title: "Kikli — Girls' Spinning Game",
     desc: "Two girls cross hands and spin until the world blurs. A childhood memory carried by every Punjabi household.",
-    src: kikliVid.url,
-    poster: kikliImg,
+    image: kikliImg,
   },
   {
     title: "Dera — Elders & Hukka",
     desc: "White pagris, brass hukka, charpais on the edge of golden mustard fields. The original gathering spot.",
-    src: deraVid.url,
-    poster: deraHukka,
+    image: deraHukka,
   },
 ];
 
@@ -193,7 +185,7 @@ function CulturePage() {
           <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-10">
             {danceVideos.map((v) => (
               <article key={v.title} className="group">
-                <VideoClip src={v.src} poster={v.poster} className="border border-mustard/20 shadow-elegant" ariaLabel={v.title} />
+                <MediaTile image={v.image} alt={v.title} className="border border-mustard/20 shadow-elegant" />
                 <h3 className="font-display text-2xl md:text-3xl mt-5 text-beige">{v.title}</h3>
                 <p className="text-beige/70 leading-relaxed mt-2">{v.desc}</p>
               </article>
