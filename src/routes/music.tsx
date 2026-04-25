@@ -91,7 +91,7 @@ function MusicPage() {
           <div className="mt-16 grid md:grid-cols-2 gap-8 lg:gap-10">
             {performances.map((p) => (
               <article key={p.title} className="group">
-                <VideoClip src={p.src} poster={p.poster} className="border border-mustard/20 shadow-elegant" ariaLabel={p.title} />
+                <MediaTile image={p.image} alt={p.title} className="border border-mustard/20 shadow-elegant" />
                 <div className="mt-5 flex items-start gap-4">
                   <div
                     className="h-1 w-12 mt-3 shrink-0 rounded-full"
