@@ -7,6 +7,16 @@ import nihari from "@/assets/food-nihari.jpg";
 import streetfood from "@/assets/food-streetfood.jpg";
 import halwapuri from "@/assets/food-halwapuri.jpg";
 import pakoraChai from "@/assets/food-pakora-chai.jpg";
+import biryani from "@/assets/food-biryani.jpg";
+import paye from "@/assets/food-paye.jpg";
+import haleem from "@/assets/food-haleem.jpg";
+import sajji from "@/assets/food-sajji.jpg";
+import chanaChaat from "@/assets/food-chana-chaat.jpg";
+import golGappay from "@/assets/food-gol-gappay.jpg";
+import samosa from "@/assets/food-samosa.jpg";
+import dahiBhallay from "@/assets/food-dahi-bhallay.jpg";
+import kheer from "@/assets/food-kheer.jpg";
+import falooda from "@/assets/food-falooda.jpg";
 
 export const Route = createFileRoute("/food")({
   head: () => ({
@@ -28,20 +38,20 @@ export const Route = createFileRoute("/food")({
 
 const dishes = [
   { name: "Saag & Makki Di Roti", origin: "Rural Heartland", body: "Mustard greens slow-cooked with garlic and ginger, served with corn flatbread, white butter, and jaggery — winter on a brass thali. The signature dish of rural Punjab.", img: saag },
-  { name: "Lahori Biryani", origin: "Old Lahore", body: "Long-grain basmati layered with marinated meat, saffron, fried onions and kewra. A wedding centrepiece that became a weekend staple.", img: nihari },
+  { name: "Lahori Biryani", origin: "Old Lahore", body: "Long-grain basmati layered with marinated meat, saffron, fried onions and kewra. A wedding centrepiece that became a weekend staple.", img: biryani },
   { name: "Lassi", origin: "Punjab-wide", body: "A clay kulhar overflowing with churned yogurt and a finger of malai. Sweet or salty. Always cold. The province's national drink.", img: lassi },
   { name: "Nihari", origin: "Old Lahore", body: "Slow-cooked overnight. Beef shank falling apart. Garam masala, ginger julienne, lemon. Eaten at sunrise with naan torn straight from the tandoor.", img: nihari },
-  { name: "Chana Chaat", origin: "Bazaar Streets", body: "Boiled chickpeas, potato, onion, tamarind chutney, green chilli. The first taste of Lahori street life — sharp, sour, alive.", img: streetfood },
-  { name: "Gol Gappay", origin: "Mall Road, Lahore", body: "Crisp puris filled with spiced potato and an explosive rush of tamarind water. Eaten standing, six in a row, before the next customer arrives.", img: streetfood },
+  { name: "Chana Chaat", origin: "Bazaar Streets", body: "Boiled chickpeas, potato, onion, tamarind chutney, green chilli. The first taste of Lahori street life — sharp, sour, alive.", img: chanaChaat },
+  { name: "Gol Gappay", origin: "Mall Road, Lahore", body: "Crisp puris filled with spiced potato and an explosive rush of tamarind water. Eaten standing, six in a row, before the next customer arrives.", img: golGappay },
   { name: "Halwa Puri", origin: "Sunday Mornings", body: "Suji halwa, channa masala, fluffy fried puris. The breakfast that defines a weekend across Lahore, Faisalabad, and Multan.", img: halwapuri },
-  { name: "Paye", origin: "Walled City", body: "Trotters slow-cooked overnight in spices until the broth becomes silk. Eaten with kulcha at dawn — a Lahori cure for everything.", img: nihari },
-  { name: "Haleem", origin: "Muharram & Beyond", body: "Wheat, lentils, and shredded meat pounded for hours into a velvet stew. Garnished with crisp onions, ginger, and lemon.", img: nihari },
+  { name: "Paye", origin: "Walled City", body: "Trotters slow-cooked overnight in spices until the broth becomes silk. Eaten with kulcha at dawn — a Lahori cure for everything.", img: paye },
+  { name: "Haleem", origin: "Muharram & Beyond", body: "Wheat, lentils, and shredded meat pounded for hours into a velvet stew. Garnished with crisp onions, ginger, and lemon.", img: haleem },
   { name: "Pakoray & Chai", origin: "Monsoon Afternoons", body: "Crisp besan-coated vegetables, fried as the rain begins. Karak doodh patti chai in a clay cup. The whole house gathers at the table.", img: pakoraChai },
-  { name: "Samosa", origin: "Iftar Tables", body: "A triangle of crisp pastry hiding spiced potato and peas. Beloved across all four provinces — but Lahore claims the crispiest fold.", img: streetfood },
-  { name: "Dahi Bhallay", origin: "Anarkali Bazaar", body: "Soft lentil dumplings drowned in chilled yogurt, tamarind chutney and crisp sev. A summer afternoon in a single katori.", img: streetfood },
-  { name: "Sajji", origin: "Cholistan & Beyond", body: "Whole lamb or chicken marinated in salt and lemon, slow-roasted on skewers around an open fire. Tribal hospitality on a tray.", img: nihari },
-  { name: "Kheer", origin: "Festive Tables", body: "Rice slow-simmered in milk, scented with cardamom and almonds. Served at weddings, Eid, and the birth of a child.", img: lassi },
-  { name: "Falooda", origin: "Summer Streets", body: "Vermicelli, basil seeds, rose syrup, kulfi and milk in a tall glass. Lahore's answer to forty-five degree afternoons.", img: lassi },
+  { name: "Samosa", origin: "Iftar Tables", body: "A triangle of crisp pastry hiding spiced potato and peas. Beloved across all four provinces — but Lahore claims the crispiest fold.", img: samosa },
+  { name: "Dahi Bhallay", origin: "Anarkali Bazaar", body: "Soft lentil dumplings drowned in chilled yogurt, tamarind chutney and crisp sev. A summer afternoon in a single katori.", img: dahiBhallay },
+  { name: "Sajji", origin: "Cholistan & Beyond", body: "Whole lamb or chicken marinated in salt and lemon, slow-roasted on skewers around an open fire. Tribal hospitality on a tray.", img: sajji },
+  { name: "Kheer", origin: "Festive Tables", body: "Rice slow-simmered in milk, scented with cardamom and almonds. Served at weddings, Eid, and the birth of a child.", img: kheer },
+  { name: "Falooda", origin: "Summer Streets", body: "Vermicelli, basil seeds, rose syrup, kulfi and milk in a tall glass. Lahore's answer to forty-five degree afternoons.", img: falooda },
 ];
 
 function FoodPage() {
