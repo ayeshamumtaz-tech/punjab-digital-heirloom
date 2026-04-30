@@ -9,13 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TraditionsRouteImport } from './routes/traditions'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as MusicRouteImport } from './routes/music'
 import { Route as HeritageRouteImport } from './routes/heritage'
 import { Route as FoodRouteImport } from './routes/food'
 import { Route as CultureRouteImport } from './routes/culture'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TraditionsRoute = TraditionsRouteImport.update({
+  id: '/traditions',
+  path: '/traditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -41,6 +48,11 @@ const CultureRoute = CultureRouteImport.update({
   path: '/culture',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,48 +61,88 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/food': typeof FoodRoute
   '/heritage': typeof HeritageRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRoute
+  '/traditions': typeof TraditionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/food': typeof FoodRoute
   '/heritage': typeof HeritageRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRoute
+  '/traditions': typeof TraditionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
   '/culture': typeof CultureRoute
   '/food': typeof FoodRoute
   '/heritage': typeof HeritageRoute
   '/music': typeof MusicRoute
   '/shop': typeof ShopRoute
+  '/traditions': typeof TraditionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/culture' | '/food' | '/heritage' | '/music' | '/shop'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/culture'
+    | '/food'
+    | '/heritage'
+    | '/music'
+    | '/shop'
+    | '/traditions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/culture' | '/food' | '/heritage' | '/music' | '/shop'
-  id: '__root__' | '/' | '/culture' | '/food' | '/heritage' | '/music' | '/shop'
+  to:
+    | '/'
+    | '/contact'
+    | '/culture'
+    | '/food'
+    | '/heritage'
+    | '/music'
+    | '/shop'
+    | '/traditions'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/culture'
+    | '/food'
+    | '/heritage'
+    | '/music'
+    | '/shop'
+    | '/traditions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
   CultureRoute: typeof CultureRoute
   FoodRoute: typeof FoodRoute
   HeritageRoute: typeof HeritageRoute
   MusicRoute: typeof MusicRoute
   ShopRoute: typeof ShopRoute
+  TraditionsRoute: typeof TraditionsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/traditions': {
+      id: '/traditions'
+      path: '/traditions'
+      fullPath: '/traditions'
+      preLoaderRoute: typeof TraditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
@@ -126,6 +178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CultureRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -138,11 +197,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
   CultureRoute: CultureRoute,
   FoodRoute: FoodRoute,
   HeritageRoute: HeritageRoute,
   MusicRoute: MusicRoute,
   ShopRoute: ShopRoute,
+  TraditionsRoute: TraditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

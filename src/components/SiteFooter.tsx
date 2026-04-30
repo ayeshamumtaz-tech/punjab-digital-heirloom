@@ -40,11 +40,12 @@ export function SiteFooter() {
           <div>
             <div className="text-mustard text-xs tracking-[0.25em] uppercase mb-5">Explore</div>
             <ul className="space-y-3 text-beige/80">
-              <li><Link to="/heritage" className="hover:text-mustard transition-colors">Heritage</Link></li>
-              <li><Link to="/culture" className="hover:text-mustard transition-colors">Living Culture</Link></li>
-              <li><Link to="/food" className="hover:text-mustard transition-colors">Cuisine</Link></li>
-              <li><Link to="/music" className="hover:text-mustard transition-colors">Music & Folk</Link></li>
-              <li><Link to="/shop" className="hover:text-mustard transition-colors">The Bazaar</Link></li>
+              <li><Link to="/culture" className="hover:text-mustard transition-colors">Culture</Link></li>
+              <li><Link to="/heritage" className="hover:text-mustard transition-colors">Virsa — Heritage</Link></li>
+              <li><Link to="/traditions" className="hover:text-mustard transition-colors">Rasm-o-Riwaj</Link></li>
+              <li><Link to="/shop" className="hover:text-mustard transition-colors">Shop</Link></li>
+              <li><Link to="/food" className="hover:text-mustard transition-colors">Zaiqa — Cuisine</Link></li>
+              <li><Link to="/contact" className="hover:text-mustard transition-colors">Contact</Link></li>
             </ul>
           </div>
 

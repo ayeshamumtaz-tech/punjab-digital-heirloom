@@ -4,11 +4,12 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/heritage", label: "Heritage" },
   { to: "/culture", label: "Culture" },
-  { to: "/food", label: "Cuisine" },
-  { to: "/music", label: "Music" },
-  { to: "/shop", label: "Bazaar" },
+  { to: "/heritage", label: "Virsa" },
+  { to: "/traditions", label: "Rasm-o-Riwaj" },
+  { to: "/shop", label: "Shop" },
+  { to: "/food", label: "Zaiqa" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
