@@ -8,12 +8,13 @@ type Product = {
   tag: string;
   img: string;
   imgAlt?: string;
+  /** Short cultural significance / story */
+  story?: string;
 };
 
 /**
- * Bazaar product card with two side-by-side images per item.
- * - Mobile: stacked top/bottom or single
- * - md+: two square images side-by-side that both reveal on hover
+ * Bazaar product card with one or two side-by-side images per item,
+ * plus a short cultural note that gives the product context.
  */
 export function ProductCard({ product }: { product: Product }) {
   const images = product.imgAlt ? [product.img, product.imgAlt] : [product.img];
@@ -46,14 +47,17 @@ export function ProductCard({ product }: { product: Product }) {
         >
           <Heart className="h-4 w-4" />
         </button>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-ink/95 to-transparent rounded-b-md">
-          <div className="text-[10px] text-mustard tracking-[0.25em] uppercase">{product.artisan}</div>
-        </div>
       </div>
 
       <div className="text-[11px] tracking-[0.2em] uppercase text-primary mb-1.5">{product.tag}</div>
       <h3 className="font-display text-lg md:text-xl leading-tight mb-1">{product.name}</h3>
-      <div className="mt-1 flex items-baseline justify-between">
+      <div className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground/80 mb-2">
+        {product.artisan}
+      </div>
+      {product.story && (
+        <p className="text-sm text-muted-foreground leading-relaxed mb-3">{product.story}</p>
+      )}
+      <div className="mt-auto pt-2 flex items-baseline justify-between border-t border-border/60">
         <div className="font-medium">${product.price}</div>
         <button className="text-xs tracking-[0.2em] uppercase text-foreground/70 hover:text-primary transition-colors">
           + Add

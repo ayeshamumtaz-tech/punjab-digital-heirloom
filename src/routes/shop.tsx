@@ -48,31 +48,30 @@ export const Route = createFileRoute("/shop")({
 
 const categories = [
   "All",
-  "Apparel",
-  "Bridal Couture",
+  "Desi Clothing",
   "Jewelry",
-  "Footwear",
-  "Textiles",
   "Home Décor",
+  "Festive Items",
+  "Handicrafts",
 ] as const;
 
 type Category = (typeof categories)[number];
 
 const products: Product[] = [
-  { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Bridal Couture", img: lehenga, imgAlt: lehenga2 },
-  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry },
-  { id: 3, name: "Embellished Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Footwear", img: khussa },
-  { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Footwear", img: kohlapuri },
-  { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Apparel", img: shalwarKameez },
-  { id: 6, name: "Cream Dhoti Kurta & Waistcoat", artisan: "Lahore Tailor House", price: 140, tag: "Apparel", img: dhotiKurta, imgAlt: dhotiKurta2 },
-  { id: 7, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan },
-  { id: 8, name: "Sheesha Paranda — Maroon", artisan: "Bahawalpur Embroiderer", price: 48, tag: "Jewelry", img: paranda, imgAlt: paranda2 },
-  { id: 9, name: "Colorful Woven Charpai", artisan: "Sargodha Weaver", price: 220, tag: "Home Décor", img: charpai },
-  { id: 10, name: "Hand-Carved Lakri Sandook", artisan: "Chiniot Wood Master", price: 540, tag: "Home Décor", img: sandook, imgAlt: sandook2 },
-  { id: 11, name: "Karhai-Wali Chadar — Maroon", artisan: "Multan Embroiderer", price: 195, tag: "Textiles", img: karhaiChadar },
-  { id: 12, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Atelier", price: 180, tag: "Textiles", img: phulkari },
-  { id: 13, name: "Truck-Art Wall Decor Set", artisan: "Rawalpindi Painter", price: 110, tag: "Home Décor", img: wallDecor },
-  { id: 14, name: "Multani Painted Gharay (Set of 3)", artisan: "Multan Pottery House", price: 88, tag: "Home Décor", img: mattiBartan, imgAlt: mattiBartan2 },
+  { id: 1, name: "Maroon Zardozi Lehenga", artisan: "Sialkot Atelier", price: 480, tag: "Desi Clothing", img: lehenga, imgAlt: lehenga2, story: "Zardozi — gold-thread embroidery — was once the exclusive craft of the Mughal court. Today, Sialkot's master karigars keep the technique alive." },
+  { id: 2, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry, story: "Kundan setting traces back to imperial Lahore — uncut gemstones laid in 24-karat gold foil, a wedding heirloom passed mother to daughter." },
+  { id: 3, name: "Embellished Khussa", artisan: "Multan Master Cobbler", price: 95, tag: "Handicrafts", img: khussa, story: "The khussa is Punjab's oldest footwear — hand-stitched leather, mirror work, tilla. No left or right; the shoe shapes itself to your foot over time." },
+  { id: 4, name: "Kohlapuri Leather Sandals", artisan: "Sahiwal Tannery", price: 78, tag: "Handicrafts", img: kohlapuri, story: "Vegetable-tanned buffalo leather, hand-braided. A summer staple from Sahiwal to Lahore — softer the more you wear them." },
+  { id: 5, name: "Emerald Gota Shalwar Kameez", artisan: "Faisalabad Studio", price: 165, tag: "Desi Clothing", img: shalwarKameez, story: "Gota — flat metallic ribbon — is appliquéd along necklines and hems. Faisalabad's mills feed the cloth; village embroiderers finish each piece by hand." },
+  { id: 6, name: "Cream Dhoti Kurta & Waistcoat", artisan: "Lahore Tailor House", price: 140, tag: "Desi Clothing", img: dhotiKurta, imgAlt: dhotiKurta2, story: "The dhoti is the rural Punjabi man's garment — cool in summer, modest, and worn from the dera to the wedding pavilion." },
+  { id: 7, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan, story: "Glass bangles, blown and coloured by hand. A Pakistani bride wears red and green; an unmarried girl wears whatever colour catches the sun." },
+  { id: 8, name: "Sheesha Paranda — Maroon", artisan: "Bahawalpur Embroiderer", price: 48, tag: "Jewelry", img: paranda, imgAlt: paranda2, story: "The paranda is woven into a girl's plait — silk threads, mirror work, and three tassels that swing as she walks. A daily ornament, not a costume." },
+  { id: 9, name: "Colorful Woven Charpai", artisan: "Sargodha Weaver", price: 220, tag: "Festive Items", img: charpai, story: "The charpai — four legs, a wooden frame, woven cotton tape — is the original sofa, bed, and dining table of the Punjabi village." },
+  { id: 10, name: "Hand-Carved Lakri Sandook", artisan: "Chiniot Wood Master", price: 540, tag: "Home Décor", img: sandook, imgAlt: sandook2, story: "Chiniot's woodcarvers have shaped sheesham trunks for four hundred years — once a bride's dowry chest, now a family heirloom." },
+  { id: 11, name: "Karhai-Wali Chadar — Maroon", artisan: "Multan Embroiderer", price: 195, tag: "Desi Clothing", img: karhaiChadar, story: "Hand-embroidered shawl, worked in a single colour over three weeks. Multan's signature — quiet, dense, warm enough for December." },
+  { id: 12, name: "Phulkari Heirloom Dupatta", artisan: "Bahawalpur Atelier", price: 180, tag: "Desi Clothing", img: phulkari, story: "Phulkari — 'flower work' — is darned silk on coarse cotton, a dowry tradition five centuries old. Each motif is a wish from mother to daughter." },
+  { id: 13, name: "Truck-Art Wall Decor Set", artisan: "Rawalpindi Painter", price: 110, tag: "Festive Items", img: wallDecor, story: "Pakistan's truck art is a moving folk gallery — peacocks, mirrors, calligraphy. Now miniaturised for the wall, painted by the same masters." },
+  { id: 14, name: "Multani Painted Gharay (Set of 3)", artisan: "Multan Pottery House", price: 88, tag: "Home Décor", img: mattiBartan, imgAlt: mattiBartan2, story: "The blue glaze of Multan, fired since the twelfth century. Used to keep water cool — and to remind a city of its kilns." },
 ];
 
 function ShopPage() {
