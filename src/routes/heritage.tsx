@@ -71,14 +71,6 @@ const eras = [
     bw: true,
   },
   {
-    period: "1849 – 1947",
-    title: "Colonial Lahore",
-    body: "The Mall, Anarkali Bazaar, the High Court, Government College — Lahore became one of the great cities of British India. Tongas crowded the streets. Ghalib walked here. Faiz dreamed here.",
-    accent: "gold",
-    img: colonialBw,
-    bw: true,
-  },
-  {
     period: "August 1947",
     title: "The Partition",
     body: "The Radcliffe Line cut the heartland in two. Millions crossed in both directions; Lahore became the capital of Pakistani Punjab. From this rupture, a new cultural identity was forged — rooted in the same soil, the same language, the same songs.",

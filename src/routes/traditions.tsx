@@ -11,7 +11,7 @@ import barat from "@/assets/wedding-barat-groom.jpg";
 import doli from "@/assets/wedding-doli.jpg";
 import rukhsati from "@/assets/wedding-rukhsati.jpg";
 import walima from "@/assets/wedding-walima.jpg";
-import chooriyan from "@/assets/wedding-chooriyan.jpg";
+
 
 export const Route = createFileRoute("/traditions")({
   head: () => ({

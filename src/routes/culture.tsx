@@ -59,12 +59,6 @@ const wedding = [
     day: "Day 2",
   },
   {
-    title: "Chooriyan & Hath Bharai",
-    body: "Glass bangles in red, green and gold are slipped onto the bride's wrists by her mother and aunts — each colour a quiet wish.",
-    img: chooriyan,
-    day: "Ritual",
-  },
-  {
     title: "Nikah",
     body: "The maulvi reads the marriage contract. The groom in cream sherwani and sehra of fresh jasmine. Three times: qubool hai. The covenant is sealed.",
     img: nikah,
