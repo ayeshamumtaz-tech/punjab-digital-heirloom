@@ -7,6 +7,7 @@ import shalimar from "@/assets/heritage-shalimar.jpg";
 import harappaBw from "@/assets/heritage-harappa-bw.jpg";
 import indusArtifactBw from "@/assets/heritage-indus-artifact-bw.jpg";
 import colonialBw from "@/assets/heritage-colonial-lahore-bw.jpg";
+import partitionBw from "@/assets/heritage-partition-bw.jpg";
 
 export const Route = createFileRoute("/heritage")({
   head: () => ({
@@ -70,10 +71,26 @@ const eras = [
     bw: true,
   },
   {
-    period: "1947 → Today",
-    title: "A Living Capital",
-    body: "Pakistan's cultural heart. Faiz festivals at Alhamra. Food street at Fort Road. The Walled City restored, brick by brick. A heritage that refuses to be a museum piece.",
+    period: "1849 – 1947",
+    title: "Colonial Lahore",
+    body: "The Mall, Anarkali Bazaar, the High Court, Government College — Lahore became one of the great cities of British India. Tongas crowded the streets. Ghalib walked here. Faiz dreamed here.",
+    accent: "gold",
+    img: colonialBw,
+    bw: true,
+  },
+  {
+    period: "August 1947",
+    title: "The Partition",
+    body: "The Radcliffe Line cut the heartland in two. Millions crossed in both directions; Lahore became the capital of Pakistani Punjab. From this rupture, a new cultural identity was forged — rooted in the same soil, the same language, the same songs.",
     accent: "deep-red",
+    img: partitionBw,
+    bw: true,
+  },
+  {
+    period: "1947 → Today",
+    title: "Pakistani Punjab — A Living Capital",
+    body: "Pakistan's cultural heart. Faiz festivals at Alhamra. Food street at Fort Road. The Walled City restored, brick by brick. A heritage that refuses to be a museum piece.",
+    accent: "royal-green",
     img: shalimar,
   },
 ];
