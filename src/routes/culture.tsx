@@ -4,7 +4,7 @@ import { MediaTile } from "@/components/MediaTile";
 
 import mehndi from "@/assets/culture-mehndi.jpg";
 import mehndiNight from "@/assets/wedding-mehndi-night.jpg";
-import chooriyan from "@/assets/wedding-chooriyan.jpg";
+
 import doli from "@/assets/wedding-doli.jpg";
 import baratGroom from "@/assets/wedding-barat-groom.jpg";
 import walima from "@/assets/wedding-walima.jpg";
