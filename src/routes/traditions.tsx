@@ -38,7 +38,7 @@ export const Route = createFileRoute("/traditions")({
 const wedding = [
   { title: "Mayun", body: "The bride wears yellow. Female relatives apply ubtan paste. Marigolds rain from the ceiling. The journey begins in turmeric and laughter.", img: mayun, day: "Day 1" },
   { title: "Mehndi Night", body: "Henna is applied in paisleys and peacocks. The dholki begins; women's tappay verses fill the courtyard. Yellow and orange everywhere.", img: mehndiNight, day: "Day 2" },
-  { title: "Chooriyan", body: "Glass bangles in red, green and gold are slipped onto the bride's wrists by her mother and aunts — each colour a quiet wish.", img: chooriyan, day: "Ritual" },
+  
   { title: "Nikah", body: "The maulvi reads the marriage contract. Three times: qubool hai. The covenant is sealed.", img: nikah, day: "Day 3" },
   { title: "Barat", body: "The groom arrives, sehra trembling, fireworks splitting the sky. Two families meet — milni — and the celebration becomes one.", img: barat, day: "Day 3" },
   { title: "Doli", body: "A doli draped in fresh jasmine and marigolds — carried on the shoulders of four men. The bride leaves her father's home.", img: doli, day: "Vidaai" },
