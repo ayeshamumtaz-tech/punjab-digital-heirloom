@@ -1,5 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Youtube, Facebook, Mail } from "lucide-react";
+import { Instagram, Youtube, Facebook, Music2 } from "lucide-react";
+
+const socials = [
+  { Icon: Instagram, label: "Instagram", handle: "@virsa.pk", href: "https://instagram.com/virsa.pk" },
+  { Icon: Facebook, label: "Facebook", handle: "/virsa.pk", href: "https://facebook.com/virsa.pk" },
+  { Icon: Youtube, label: "YouTube", handle: "@VirsaHeritage", href: "https://youtube.com/@VirsaHeritage" },
+  { Icon: Music2, label: "TikTok", handle: "@virsa.pk", href: "https://tiktok.com/@virsa.pk" },
+];
 
 export function SiteFooter() {
   return (
@@ -24,14 +31,16 @@ export function SiteFooter() {
               to the world."
             </p>
             <div className="flex items-center gap-3 mt-8">
-              {[Instagram, Youtube, Facebook, Mail].map((Icon, i) => (
+              {socials.map((s) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className="h-10 w-10 rounded-full border border-beige/20 flex items-center justify-center hover:bg-mustard hover:text-ink hover:border-mustard transition-all"
-                  aria-label="social"
+                  aria-label={`${s.label} ${s.handle}`}
                 >
-                  <Icon className="h-4 w-4" />
+                  <s.Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
@@ -40,7 +49,6 @@ export function SiteFooter() {
           <div>
             <div className="text-mustard text-xs tracking-[0.25em] uppercase mb-5">Explore</div>
             <ul className="space-y-3 text-beige/80">
-              <li><Link to="/culture" className="hover:text-mustard transition-colors">Culture</Link></li>
               <li><Link to="/heritage" className="hover:text-mustard transition-colors">Virsa — Heritage</Link></li>
               <li><Link to="/traditions" className="hover:text-mustard transition-colors">Rasm-o-Riwaj</Link></li>
               <li><Link to="/shop" className="hover:text-mustard transition-colors">Shop</Link></li>
@@ -50,23 +58,17 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <div className="text-mustard text-xs tracking-[0.25em] uppercase mb-5">Newsletter</div>
-            <p className="text-beige/70 text-sm mb-4 leading-relaxed">
-              Stories from Lahore. Cuisine from the heartland. Heritage in your inbox.
-            </p>
-            <form className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="bg-beige/10 border border-beige/20 rounded-full px-5 py-3 text-sm text-beige placeholder:text-beige/40 focus:outline-none focus:border-mustard transition-colors"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-mustard text-ink px-5 py-3 text-sm font-medium hover:bg-gold transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+            <div className="text-mustard text-xs tracking-[0.25em] uppercase mb-5">Follow VIRSA</div>
+            <ul className="space-y-3 text-beige/80 text-sm">
+              {socials.map((s) => (
+                <li key={s.label} className="flex items-center gap-3">
+                  <s.Icon className="h-4 w-4 text-mustard shrink-0" />
+                  <a href={s.href} target="_blank" rel="noreferrer" className="hover:text-mustard transition-colors">
+                    <span className="text-beige/50">{s.label} ·</span> {s.handle}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
