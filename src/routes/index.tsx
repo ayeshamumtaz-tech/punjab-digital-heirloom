@@ -114,7 +114,7 @@ function HomePage() {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                to="/culture"
+                to="/traditions"
                 className="group inline-flex items-center gap-3 rounded-full bg-mustard text-ink px-7 py-4 font-medium hover:bg-gold transition-all shadow-gold"
               >
                 Explore Culture
@@ -289,10 +289,10 @@ function HomePage() {
           </div>
           <div className="mt-12 text-center">
             <Link
-              to="/culture"
+              to="/traditions"
               className="inline-flex items-center gap-2 text-primary font-medium group"
             >
-              All cultural stories
+              All traditions & culture
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -371,7 +371,7 @@ function HomePage() {
               description="From the algoza of a Cholistani shepherd to the booming dhol of a barat procession, from qawwali at Data Darbar to tappay in a village courtyard — Punjab's music is the universal language of joy."
             />
             <Link
-              to="/culture"
+              to="/traditions"
               className="mt-10 inline-flex items-center gap-3 rounded-full bg-mustard text-ink px-7 py-3.5 font-medium hover:bg-gold transition-colors"
             >
               Hear the Folk
