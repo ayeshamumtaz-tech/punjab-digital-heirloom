@@ -3,6 +3,8 @@ import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/r
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { CartProvider } from "@/components/CartContext";
+import { CartDrawer } from "@/components/CartDrawer";
 
 function NotFoundComponent() {
   return (
@@ -78,12 +80,15 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <SiteHeader />
-      <main className="flex-1">
-        <Outlet />
-      </main>
-      <SiteFooter />
-    </div>
+    <CartProvider>
+      <div className="min-h-screen flex flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+        <CartDrawer />
+      </div>
+    </CartProvider>
   );
 }
