@@ -25,12 +25,12 @@ To bridge the gap between cultural heritage and modern digital experiences by cr
 
 ## 🛍 Key Features
 
-- 🌿 Cultural storytelling and heritage showcase
-- 🧵 Traditional Punjabi fashion display
-- 🛒 Interactive cultural shop section
-- 📱 Fully responsive design (mobile + desktop)
-- 🎨 Modern UI inspired by Punjabi aesthetics
-- ⚡ Fast, AI-assisted development workflow
+-  Cultural storytelling and heritage showcase
+-  Traditional Punjabi fashion display
+-  Interactive cultural shop section
+-  Fully responsive design (mobile + desktop)
+-  Modern UI inspired by Punjabi aesthetics
+-  Fast, AI-assisted development workflow
 
 ---
 
@@ -54,11 +54,11 @@ To bridge the gap between cultural heritage and modern digital experiences by cr
 
 ## 🚀 Future Improvements
 
-- 🧾 Add secure payment integration for shop items  
-- 🔍 Improve product filtering and search  
-- 🌍 Add multilingual support (Punjabi / Urdu / English)  
-- 🎥 Add animations and interactive storytelling elements  
-- 📊 Enhance UI/UX for better engagement  
+-  Add secure payment integration for shop items  
+-  Improve product filtering and search  
+-  Add multilingual support (Punjabi / Urdu / English)  
+-  Add animations and interactive storytelling elements  
+-  Enhance UI/UX for better engagement  
 
 ---
 
