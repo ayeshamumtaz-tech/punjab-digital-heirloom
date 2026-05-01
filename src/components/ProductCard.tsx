@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { useCart } from "./CartContext";
 
 type Product = {
   id: number;
@@ -17,6 +18,7 @@ type Product = {
  * plus a short cultural note that gives the product context.
  */
 export function ProductCard({ product }: { product: Product }) {
+  const { addItem } = useCart();
   const images = product.imgAlt ? [product.img, product.imgAlt] : [product.img];
   const isSingle = images.length === 1;
   return (
@@ -59,8 +61,14 @@ export function ProductCard({ product }: { product: Product }) {
       )}
       <div className="mt-auto pt-2 flex items-baseline justify-between border-t border-border/60">
         <div className="font-medium">${product.price}</div>
-        <button className="text-xs tracking-[0.2em] uppercase text-foreground/70 hover:text-primary transition-colors">
-          + Add
+        <button
+          type="button"
+          onClick={() =>
+            addItem({ id: product.id, name: product.name, price: product.price, img: product.img })
+          }
+          className="text-xs tracking-[0.2em] uppercase text-foreground/70 hover:text-primary transition-colors"
+        >
+          + Add to Cart
         </button>
       </div>
     </article>

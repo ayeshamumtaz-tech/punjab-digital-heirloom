@@ -31,12 +31,13 @@ import kurtaShalwarWhite from "@/assets/shop-kurta-shalwar-white.jpg";
 import lawnPink from "@/assets/shop-lawn-pink.jpg";
 
 import jhumka from "@/assets/shop-jhumka.jpg";
-import mathaPatti from "@/assets/shop-matha-patti.jpg";
-import nath from "@/assets/shop-nath.jpg";
+import bridalChoker from "@/assets/shop-matha-patti.jpg";
 import jhanjar from "@/assets/shop-jhanjar.jpg";
 import tikka from "@/assets/shop-tikka.jpg";
 import kangan from "@/assets/shop-kangan.jpg";
-import haathPhool from "@/assets/shop-haath-phool.jpg";
+import longMaala from "@/assets/shop-haath-phool.jpg";
+import oxidisedKaray from "@/assets/shop-oxidised-karay.jpg";
+import bridalJewelrySet from "@/assets/shop-bridal-jewelry-set.jpg";
 
 import brassSurahi from "@/assets/shop-brass-surahi.jpg";
 import multaniVase from "@/assets/shop-multani-vase.jpg";
@@ -115,13 +116,14 @@ const products: Product[] = [
   { id: 11, name: "Kundan & Pearl Choker Set", artisan: "Hira Mandi Workshop", price: 320, tag: "Jewelry", img: jewelry, story: "Kundan setting traces back to imperial Lahore — uncut gemstones laid in 24-karat gold foil, a wedding heirloom passed mother to daughter." },
   { id: 12, name: "Kanch Ki Chooriyan — Stack of 12", artisan: "Hyderabad Glass Bazaar", price: 32, tag: "Jewelry", img: chooriyan, story: "Glass bangles, blown and coloured by hand. A Pakistani bride wears red and green; an unmarried girl wears whatever colour catches the sun." },
   { id: 13, name: "Sheesha Paranda — Maroon", artisan: "Bahawalpur Embroiderer", price: 48, tag: "Jewelry", img: paranda, imgAlt: paranda2, story: "The paranda is woven into a girl's plait — silk threads, mirror work, and three tassels that swing as she walks. A daily ornament, not a costume." },
-  { id: 14, name: "Meenakari Gold Jhumka", artisan: "Lahore Sunehri Bazaar", price: 145, tag: "Jewelry", img: jhumka, story: "Bell-shaped earrings with enamel meenakari and pearl drops. The chime under a dupatta is Punjab's most loved accessory." },
-  { id: 15, name: "Bridal Matha Patti", artisan: "Hira Mandi Workshop", price: 285, tag: "Jewelry", img: mathaPatti, story: "Forehead jewellery with a central pendant and side chains — every Pakistani bride's first heirloom from her nani's box." },
-  { id: 16, name: "Heavy Bridal Nath", artisan: "Gujranwala Goldsmith", price: 220, tag: "Jewelry", img: nath, story: "The nath — nose ring linked to the ear by a fine gold chain — turns the bride's profile into a portrait at the nikah." },
+  { id: 14, name: "Meenakari Gold Jhumka — Pair", artisan: "Lahore Sunehri Bazaar", price: 145, tag: "Jewelry", img: jhumka, story: "A matched pair of bell-shaped earrings with green meenakari enamel and pearl drops. The chime under a dupatta is Punjab's most loved accessory." },
+  { id: 15, name: "Bridal Choker Necklace", artisan: "Hira Mandi Workshop", price: 285, tag: "Jewelry", img: bridalChoker, story: "A close-fitting kundan and pearl choker that hugs the collarbone — every Pakistani bride's first heirloom from her nani's box." },
+  { id: 16, name: "Oxidised Silver Karay — Pair", artisan: "Sindhi Silversmith", price: 165, tag: "Jewelry", img: oxidisedKaray, story: "Heavy oxidised silver cuffs in deep filigree with hanging ghungroo bells. The desi-aesthetic karay that finishes a plain kurta." },
   { id: 17, name: "Oxidised Silver Jhanjar", artisan: "Sialkot Silversmith", price: 75, tag: "Jewelry", img: jhanjar, story: "Anklets with tiny ghungroo bells. A village girl is heard before she is seen — the chime once announced the hour for tea." },
   { id: 18, name: "Kundan Tikka with Pearl Drop", artisan: "Lahore Sunehri Bazaar", price: 135, tag: "Jewelry", img: tikka, story: "A single pendant rests in the centre parting, a pearl trembling above the brow. Worn at mayun, mehndi, and every shaadi photograph." },
   { id: 19, name: "Pair of Bridal Kangan", artisan: "Lahore Sunehri Bazaar", price: 380, tag: "Jewelry", img: kangan, story: "Wide gold cuffs with engraved meenakari — the kind a Lahori grandmother gives the day after rukhsati." },
-  { id: 20, name: "Silver Haath Phool", artisan: "Multan Silversmith", price: 165, tag: "Jewelry", img: haathPhool, story: "Hand harness with finger rings and a bracelet — a single piece that turns the bride's hand into the centrepiece of the mehndi." },
+  { id: 20, name: "Silver Filigree Long Maala", artisan: "Multan Silversmith", price: 165, tag: "Jewelry", img: longMaala, story: "A waist-length silver chain with intricate filigree beads and a tasselled drop — layered over a kurta or worn solo at the mehndi." },
+  { id: 51, name: "Heavy Bridal Jewelry Set — Gold Tone", artisan: "Hira Mandi Workshop", price: 520, tag: "Jewelry", img: bridalJewelrySet, story: "A complete bridal set on maroon velvet — gold-tone necklace with kundan stones, pearl tassels and matching chains. The centrepiece of every Lahori bride's jahez." },
 
   // ── Home Décor ────────────────────────────────────────────────
   { id: 21, name: "Hand-Carved Lakri Sandook", artisan: "Chiniot Wood Master", price: 540, tag: "Home Décor", img: sandook, imgAlt: sandook2, story: "Chiniot's woodcarvers have shaped sheesham trunks for four hundred years — once a bride's dowry chest, now a family heirloom." },

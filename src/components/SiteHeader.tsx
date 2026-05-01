@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
+import { useCart } from "./CartContext";
 
 const navLinks = [
   { to: "/", label: "Home" },
-  { to: "/culture", label: "Culture" },
   { to: "/heritage", label: "Virsa" },
   { to: "/traditions", label: "Rasm-o-Riwaj" },
   { to: "/shop", label: "Shop" },
@@ -15,6 +15,7 @@ const navLinks = [
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { count, openCart } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -65,13 +66,19 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              to="/shop"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-primary transition-colors shadow-soft"
+            <button
+              type="button"
+              onClick={openCart}
+              aria-label={`Open cart (${count} items)`}
+              className="relative inline-flex items-center justify-center h-10 w-10 rounded-full bg-foreground text-background hover:bg-primary transition-colors shadow-soft"
             >
               <ShoppingBag className="h-4 w-4" />
-              Shop
-            </Link>
+              {count > 0 && (
+                <span className="absolute -top-1 -right-1 h-5 min-w-5 px-1 rounded-full bg-primary text-primary-foreground text-[10px] font-medium flex items-center justify-center">
+                  {count}
+                </span>
+              )}
+            </button>
             <button
               onClick={() => setOpen(true)}
               className="lg:hidden p-2 rounded-md text-foreground"

@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, Instagram, Youtube, Facebook } from "lucide-react";
+import { Mail, MapPin, Instagram, Youtube, Facebook, Music2 } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+
+const socials = [
+  { Icon: Instagram, label: "Instagram", handle: "@virsa.pk", href: "https://instagram.com/virsa.pk" },
+  { Icon: Facebook, label: "Facebook", handle: "/virsa.pk", href: "https://facebook.com/virsa.pk" },
+  { Icon: Youtube, label: "YouTube", handle: "@VirsaHeritage", href: "https://youtube.com/@VirsaHeritage" },
+  { Icon: Music2, label: "TikTok", handle: "@virsa.pk", href: "https://tiktok.com/@virsa.pk" },
+];
 
 import lahoreAlley from "@/assets/lahore-walled-city.jpg";
 
@@ -60,17 +67,28 @@ function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="mt-10 flex items-center gap-3">
-              {[Instagram, Youtube, Facebook].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="h-10 w-10 rounded-full border border-foreground/15 flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
-                  aria-label="social"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
+            <div className="mt-10">
+              <div className="text-xs tracking-[0.25em] uppercase text-foreground/60 mb-4">Follow Virsa</div>
+              <ul className="space-y-3">
+                {socials.map((s) => (
+                  <li key={s.label}>
+                    <a
+                      href={s.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-4 group"
+                    >
+                      <span className="h-10 w-10 rounded-full border border-foreground/15 flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all">
+                        <s.Icon className="h-4 w-4" />
+                      </span>
+                      <span>
+                        <div className="font-medium group-hover:text-primary transition-colors">{s.handle}</div>
+                        <div className="text-xs text-muted-foreground">{s.label}</div>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
