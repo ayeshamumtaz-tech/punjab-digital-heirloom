@@ -31,12 +31,13 @@ import kurtaShalwarWhite from "@/assets/shop-kurta-shalwar-white.jpg";
 import lawnPink from "@/assets/shop-lawn-pink.jpg";
 
 import jhumka from "@/assets/shop-jhumka.jpg";
-import mathaPatti from "@/assets/shop-matha-patti.jpg";
-import nath from "@/assets/shop-nath.jpg";
+import bridalChoker from "@/assets/shop-matha-patti.jpg";
 import jhanjar from "@/assets/shop-jhanjar.jpg";
 import tikka from "@/assets/shop-tikka.jpg";
 import kangan from "@/assets/shop-kangan.jpg";
-import haathPhool from "@/assets/shop-haath-phool.jpg";
+import longMaala from "@/assets/shop-haath-phool.jpg";
+import oxidisedKaray from "@/assets/shop-oxidised-karay.jpg";
+import bridalJewelrySet from "@/assets/shop-bridal-jewelry-set.jpg";
 
 import brassSurahi from "@/assets/shop-brass-surahi.jpg";
 import multaniVase from "@/assets/shop-multani-vase.jpg";
