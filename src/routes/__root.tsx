@@ -48,6 +48,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "VIRSA — The Soul of Punjab" },
+      { name: "description", content: "Punjab's Golden Threads is a premium digital museum and lifestyle commerce platform showcasing Pakistani Punjab's heritage." },
+      { property: "og:description", content: "Punjab's Golden Threads is a premium digital museum and lifestyle commerce platform showcasing Pakistani Punjab's heritage." },
+      { name: "twitter:description", content: "Punjab's Golden Threads is a premium digital museum and lifestyle commerce platform showcasing Pakistani Punjab's heritage." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39b43f17-a085-45a7-9ce2-b6353f79345a/id-preview-f0066f14--a55774ec-64d7-487c-8012-1ef89d7424d9.lovable.app-1777653762026.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/39b43f17-a085-45a7-9ce2-b6353f79345a/id-preview-f0066f14--a55774ec-64d7-487c-8012-1ef89d7424d9.lovable.app-1777653762026.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
